@@ -1,0 +1,36 @@
+<template name="manageSpace">
+  <div class="container">
+    <div id="manageSpace" class="col-md-10">
+      <h2>Edit Space</h2>
+
+      <form id="manage_space">
+        {{#with user}}
+        <fieldset>
+
+          <div class="form-group">
+            <label class="control-label" for="spaceId">Space ID</label>
+            <input type="text" class="form-control" name="spaceId" id="spaceId" placeholder={{spaceId}}>
+          </div>
+
+          {{#each delegates}}
+          <div class="form-group">
+            <label class="control-label" for="delegate{{index}}">Delegate {{index}} </label>
+            <select class="form-control" name="delegate" id="{{index}}">
+              <option disabled="disabled" selected="selected">{{name}}</option>
+              {{#each spaceUsers}}
+                <option value="{{this.username}}">{{this.username}}</option>
+              {{/each}}
+            </select>
+          </div>
+          {{/each}}
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Update</button>
+          </div>
+
+        </fieldset>
+        {{/with}}
+      </form>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,37 @@
+<template name="spaceOwnerHome">
+  <div class="container">
+    <div id="main" class="col-md-12">
+      <h2> Space Owner Home</h2>
+      {{> spaceDetails}}
+    </div>
+  </div>
+</template>
+
+
+<template name="spaceDetails">
+  {{#with user}}
+  <div class="row">
+    <div class="well well-lg">
+      <h3>Space ID:
+        <span>{{spaceId}}</span>
+      </h3>
+      {{#if isFreed}}
+        <h4>Space is Freed!</h4>
+        <input id="reclaimSpace" class="btn btn-primary" type="submit" value="Reclaim Space" />
+      {{else}}
+        <input id="freeSpace" class="btn btn-primary" type="submit" value="Free Your Space!" />
+      {{/if}}
+      <h4>Delegated to:
+        <span>{{delegatedTo}}</span>
+      </h4>
+      <h4>Status:
+        <span>{{status}}</span>
+      </h4>
+      <h4>Delegates:</h4>
+      {{#each delegates}}
+        {{> delegatePanel}}
+      {{/each}}
+    </div>
+  </div>
+  {{/with}}
+</template>

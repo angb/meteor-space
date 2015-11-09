@@ -1,0 +1,26 @@
+<template name="spaceUserHome">
+  <div class="container">
+    <div id="main" class="col-md-10">
+      <h2> Space User Home</h2>
+      {{> claimSpace}}
+    </div>
+    <div id="sidebar" class="col-md-2">
+      <img src="img/car-space-icon.png" alt="Car Spaces" />
+    </div>
+  </div>
+</template>
+
+<template name="claimSpace">
+  <div class="row">
+    <div class="well well-lg" data-id="{{ _id }}">
+      <h3>Look for Free spaces here!</h3>
+      {{#each currentSpaceData}}
+        <h3>Space ID: <span>{{spaceId}}</span></h3>
+        {{#if isPending}}
+          <input id="claimSpace" class="btn btn-primary" type="submit" value="Claim Space" />
+          <input id="rejectSpace" class="btn btn-primary" type="submit" value="Reject Space" />
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</template>

@@ -1,0 +1,18 @@
+<template name="home">
+  <div class="container">
+      {{#if currentUser}}
+
+          {{#if isInRole 'SpaceOwner'}}
+            {{> spaceOwnerHome}}
+          {{/if}}
+
+          {{#if isInRole 'SpaceUser'}}
+            {{> spaceUserHome}}
+          {{/if}}
+
+	     {{else}}
+          <br>
+          <h1>{{message}}</h1>
+	     {{/if}}
+  </div>
+</template>

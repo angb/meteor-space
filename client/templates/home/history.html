@@ -1,0 +1,38 @@
+<template name="history">
+  <div class="container">
+    <h2>History</h2>
+    {{> freeSpacesHistory}}
+  </div>
+</template>
+
+<template name="freeSpacesHistory">
+  <div class="row">
+    <div class="well well-lg" data-id="{{ _id }}">
+      <div class="span6">
+        <table class="table">
+          {{#each freeSpaceHistory}}
+          <tr>
+            <td>
+              <h4>Date:
+                <span>{{date}}</span>
+              </h4>
+              <p>User Id:
+                <span>{{userId}}</span>
+              </p>
+              <p>Username:
+                <span>{{username}}</span>
+              </p>
+              <p>Space Id:
+                <span>{{spaceId}}</span>
+              </p>
+              <p>Action:
+                <span>{{action}}</span>
+              </p>
+            </td>
+          </tr>
+          {{/each}}
+        </table>
+      </div>
+    </div>
+  </div>
+</template>

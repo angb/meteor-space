@@ -1,0 +1,19 @@
+<template name="profile">
+  <div class="container">
+    <div id="profile" class="col-md-10">
+      <h2>Profile</h2>
+      {{#autoForm id="UserProfileEdit" collection="Meteor.users" doc=currentUser type="update"}}
+        {{> afQuickField name="username"}}
+        {{> afQuickField name="profile.firstName"}}
+        {{> afQuickField name="profile.lastName"}}
+        {{> afQuickField name="profile.notify"}}
+        {{> afQuickField name='profile.days'}}
+        {{#unless autoSaveMode}}
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" disabled="{{disableButtons}}">Submit</button>
+          </div>
+        {{/unless}}
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

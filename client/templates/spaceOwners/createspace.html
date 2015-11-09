@@ -1,0 +1,51 @@
+<template name="createSpace">
+  <div class="container">
+    <div id="createSpace" class="col-md-10">
+      <h2>Create Space</h2>
+
+      <form id="create_space">
+        <fieldset>
+          <div class="form-group">
+            <label class="control-label" for="spaceId">Space ID</label>
+            <input type="text" class="form-control" name="spaceId" id="spaceId" placeholder=spaceId>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label" for="delegate1">Delegate 1 </label>
+            <select class="form-control" name="delegate" id="delegate_one">
+              <option disabled="disabled" selected="selected">{{name}}</option>
+              {{#each spaceUsers}}
+                <option value="{{this.username}}">{{this.username}}</option>
+              {{/each}}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label" for="delegate2">Delegate 2 </label>
+            <select class="form-control" name="delegate" id="delegate_two">
+              <option disabled="disabled" selected="selected">{{name}}</option>
+              {{#each spaceUsers}}
+                <option value="{{this.username}}">{{this.username}}</option>
+              {{/each}}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label" for="delegate3">Delegate 3 </label>
+            <select class="form-control" name="delegate" id="delegate_three">
+              <option disabled="disabled" selected="selected">{{name}}</option>
+              {{#each spaceUsers}}
+                <option value="{{this.username}}">{{this.username}}</option>
+              {{/each}}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create</button>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</template>

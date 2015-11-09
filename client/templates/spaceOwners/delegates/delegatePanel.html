@@ -1,0 +1,80 @@
+<template name="delegatePanel">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="well col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+        <div class="row user-row">
+          <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">
+            <img class="img-circle" src="img/User-blue-icon-sml.png" alt="User Pic">
+          </div>
+          <div class="col-xs-8 col-sm-9 col-md-10 col-lg-10">
+            <strong>{{name}}</strong>
+            <br>
+            <span class="text-muted">Space User Profile</span>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 dropdown-user" data-for=".{{name}}">
+            <i class="glyphicon {{glyphicon}} text-muted"></i>
+          </div>
+        </div>
+
+        {{#if isExpanded}}
+        {{#with delegateProfile name}}
+        <div class="row user-infos {{name}}">
+          <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">User information</h3>
+              </div>
+
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+                    <img class="img-circle" src="img/User-blue-icon-sml.png" alt="User Pic">
+                  </div>
+                  <div class="col-xs-2 col-sm-2 hidden-md hidden-lg">
+                    <img class="img-circle" src="img/User-blue-icon-med.png" alt="User Pic">
+                  </div>
+
+                  <div class="col-xs-10 col-sm-10 hidden-md hidden-lg">
+                    <strong>{{this.username}}</strong>
+                    <br>
+                    <dl>
+                      <dt>Space days:</dt>
+                      <dd>{{profile.days}}</dd>
+                      <dt>Registered since:</dt>
+                      <dd>{{profile.registered}}</dd>
+                    </dl>
+                  </div>
+
+                  <div class=" col-md-9 col-lg-9 hidden-xs hidden-sm">
+                    <strong>{{this.username}}</strong>
+                    <br>
+                    <table class="table table-user-information">
+                      <tbody>
+                        <tr>
+                          <td>Space days:</td>
+                          <td>{{profile.days}}</td>
+                        </tr>
+                        <tr>
+                          <td>Registered since:</td>
+                          <td>{{profile.registered}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-footer">
+                <button class="btn btn-sm btn-primary" type="button" data-toggle="tooltip" data-original-title="Send message to user"><i class="glyphicon glyphicon-envelope"></i></button>
+                <span class="pull-right"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/with}}
+        {{/if}}
+
+      </div>
+    </div>
+  </div>
+</template>

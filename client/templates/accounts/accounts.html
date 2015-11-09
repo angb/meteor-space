@@ -1,0 +1,69 @@
+<template name="SignUp">
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form action="/sign-up" id="signUpForm" method="post">
+      <fieldset>
+        <div class="form-group">
+          <label class="control-label" for="userName">User Name</label>
+          <input class="form-control" id="signUpName" name="name" placeholder="User Name" type="text">
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="email">Email address</label>
+          <input class="form-control" id="signUpEmail" name="email" placeholder="Email Address" type="text">
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="password">Password</label>
+          <input class="form-control" id="signUpPassword" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="password-confirm">Password Confirm</label>
+          <input class="form-control" id="signUpPasswordConfirm" name="password-confirm" placeholder="Confirm" type="password">
+        </div>
+        <div class="form-group">
+          <label class="control-label">Register as a Space:</label>
+          <div class="af-radio-group">
+            <label class="radio-inline fix-indent">User</label>
+            <input type="radio" name="SpaceRole" value="SpaceUser" id="SpaceRoleUser">
+            <label class="radio-inline fix-indent">Owner</label>
+            <input type="radio" name="SpaceRole" value="SpaceOwner" id="SpaceRoleOwner">
+          </div>
+        </div>
+        <div class="form-group">
+          <input class="btn btn-primary" type="submit" value="Join Spacers!">
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</template>
+
+<template name="SignIn">
+  <div class="container">
+    <h2>Sign In</h2>
+    <form action="/signin" id="signInForm" method="post">
+      <div class="form-group">
+        <label class="control-label" for="emailAddress">Email Address</label>
+        <input class="form-control" id="signInEmail" name="email" placeholder="Email Address" type="text">
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="password">Password</label>
+        <input class="form-control" id="signInPassword" name="password" placeholder="Password" type="password">
+      </div>
+      <div class="form-group">
+        <input class="btn btn-primary" type="submit" value="Sign In">
+      </div>
+    </form>
+  </div>
+
+</template>
+
+<template name="SignOut">
+  <div class="container">
+    <h2>Sign Out</h2>
+    <fieldset>
+      <br>
+      <span class="welcome">Are you sure you want to sign out?</span>
+      <a class="sign-out" href="/" id="signOut">Sign Out</a>
+    </fieldset>
+  </div>
+
+</template>
